@@ -7,8 +7,16 @@
      <title>Tour of DOM</title>
      <link rel="stylesheet" href="styles/styles.css">
      <style>
-          li {
+          .fruits-container li {
                color: tomato;
+          }
+
+          #fruits-title {
+               color: black;
+          }
+
+          .important-places {
+               color: blueviolet;
           }
      </style>
 </head>
@@ -16,7 +24,9 @@
 <body>
      <header>
           <h1>Welcome to my DOM</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti magni nemo minus unde maxime, perferendis nobis beatae vero, quibusdam voluptatibus culpa expedita veniam tenetur numquam? Maxime consequuntur alias qui dolorum.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti magni nemo minus unde maxime,
+               perferendis nobis beatae vero, quibusdam voluptatibus culpa expedita veniam tenetur numquam? Maxime
+               consequuntur alias qui dolorum.</p>
      </header>
      <main>
           <section>
@@ -28,8 +38,8 @@
                     <li>DOM de re baba''</li>
                </ul>
           </section>
-          <section>
-               <h1>Fruits I like </h1>
+          <section class="fruits-container">
+               <h1 id="fruits-title">Fruits I like </h1>
                <ul>
                     <li>Apple</li>
                     <li>Banana</li>
@@ -37,12 +47,12 @@
                </ul>
           </section>
           <section>
-               <h1>Places I like to visit</h1>
+               <h1 id="places-title">Places I like to visit</h1>
                <ul>
-                    <li>Soondarban</li>
-                    <li>Bandorban</li>
-                    <li>Kataban</li>
-                    <li>Shalbon</li>
+                    <li class="important-places  ">Soondarban</li>
+                    <li class="important-places  ">Bandorban</li>
+                    <li class="important-places  ">Kataban</li>
+                    <li class="other-place  ">Shalbon</li>
                </ul>
           </section>
      </main>
@@ -51,11 +61,30 @@
           const liCollection = document.getElementsByTagName("li");
           //     console.log(liCollection);
           for (const li of liCollection) {
-               console.log(li.innerText);
+               // console.log(li.innerText);
           }
+
+          // option-1: getElementsByTagName
           const allHeaders = document.getElementsByTagName('h1');
           for (const h1 of allHeaders) {
-               console.log(h1.innerText);
+               // console.log(h1.innerText);
+          }
+
+          // option-2: getElementById
+          const fruitsTitle = document.getElementById('fruits-title');
+          fruitsTitle.innerText = 'Fruits changed by JS';
+
+          // option-3: getElementsByClassName
+          const places = document.getElementsByClassName('important-places');
+          for (const place of places) {
+               console.log(place.innerText);
+
+          }        
+          // option-4: querySelector
+          // option-5: querySelectorAll
+          const someLi = document.querySelectorAll('.fruits-container li');
+          for(const  li of someLi){
+               console.log(li.innerText);
           }
      </script>
 </body>
