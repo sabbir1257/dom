@@ -18,11 +18,31 @@ const ul = document.createElement('ul');
 const li1 = document.createElement('li');
 li1.innerText = 'biryani';
 ul.appendChild(li1);
+
 const li2 = document.createElement('li');
-li2.innerText = 'borhani '; 
+li2.innerText = 'borhani ';
 ul.appendChild(li2);
+
 const li3 = document.createElement('li');
-li2.innerText = 'salad '; 
+li3.innerText = 'salad ';
 ul.appendChild(li3);
 
+section.appendChild(ul);
+
 mainContainer.appendChild(section);
+
+
+
+// set innerHTML directly
+const sectionDress = document.createElement('section');
+sectionDress.innerHTML = `
+ <h1>My Dress section</h1>
+  <ul>
+    <li>T-shirt</li>
+    <li>Pants</li>
+    <li>Shoes</li>
+  </ul>
+`;
+
+
+mainContainer.appendChild(sectionDress);
